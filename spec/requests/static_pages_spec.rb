@@ -1,13 +1,16 @@
 require 'spec_helper' 
 describe "Static pages" do
+	# Code added in listing 3.31 for base_title and contact page
+	let(:base_title) { "Ruby on Rails Tutorial Sample App"}
+	
 	describe "Home page" do
-		it "should have the content 'SampleApp'" do 
+		it "should have the content 'Sample App'" do 
 			visit '/static_pages/home'
 			expect(page).to have_content('Sample App')
 		end
 		it "should have the title 'Home'" do
 			visit '/static_pages/home'
-			expect(page).to have_title("Ruby on Rails Tutorial Sample App | Home")
+			expect(page).to have_title("#{base_title} | Home")
 		end 
 	end
 	describe "Help page" do
@@ -17,7 +20,7 @@ describe "Static pages" do
 		end 
 		it "should have the title 'Help'" do
 			visit '/static_pages/help'
-			expect(page).to have_title("Ruby on Rails Tutorial Sample App | Help")
+			expect(page).to have_title("#{base_title} | Help")
 		end
 	end
 	# This code is from Rails Tutorial Listing 3.14
@@ -26,9 +29,21 @@ describe "Static pages" do
 			visit '/static_pages/about'
 			expect(page).to have_content('About Us')
 		end 
+		# Code from Listing 3.19
 		it "should have the title 'About Us'" do
 			visit '/static_pages/about'
-			expect(page).to have_title("Ruby on Rails Tutorial Sample App | About Us")
+			expect(page).to have_title("#{base_title} | About Us")
+		end
+	end
+	describe "Contact page" do
+		it "should have the content 'Contact'" do 
+			visit '/static_pages/contact'
+			expect(page).to have_content('Contact')
+		end 
+		# Code from Listing 3.31
+		it "should have the title 'Contact'" do
+			visit '/static_pages/contact'
+			expect(page).to have_title("#{base_title} | Contact")
 		end
 	end
 end

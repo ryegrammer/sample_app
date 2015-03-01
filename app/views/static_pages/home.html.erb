@@ -2,7 +2,7 @@
 .erb files and application.html.erb -->
 <% provide(:title, 'Home') %>
 <h1>Sample App</h1>
-<p>
+<p> Original
 	This is the home page for the
 	<a href="http://railstutorial.org/">RubyonRailsTutorial</a> 
 	sample application.
@@ -11,11 +11,11 @@
 
 <!-- Second & Thirds Update to pass title tests 
 with Listing 3.20 & 3.23 
-<% provide(:title, 'Home') %> <!-- from 3.23 -->
+<% provide(:title, 'Home') %>  //from 3.23 
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Ruby on Rails Tutorial Sample App | <%= yield(:title) %></title> <!-- yield from 3.23 -->
+		<title>Ruby on Rails Tutorial Sample App | <%= yield(:title) %></title>
 	</head>
 	<body>
 		<h1>Sample App</h1>
